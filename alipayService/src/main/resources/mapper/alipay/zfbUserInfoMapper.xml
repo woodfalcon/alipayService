@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.core.dao.alipay.AlipayDao">
+
+	<select id="selectZfbUserInfo" resultType="com.core.common.model.ZfbUserInfo">
+		SELECT
+		alipay_user_id as userId,uname as uame,certno as certno,phone as phone
+		FROM
+		tvm_zfb_user_info
+	</select>
+	
+	<insert id="addZfbUsrInfo" parameterType="java.util.HashMap">
+		insert into
+		 tvm_zfb_user_info 
+		 (alipay_user_id,uname,certno,phone)value(#{userId},#{uname},#{certno},#{phone})
+	
+	</insert>
+	
+</mapper>

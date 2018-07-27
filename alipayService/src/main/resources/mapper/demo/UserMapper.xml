@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.core.dao.demo.UserDao">
+
+	<select id="selectUsers" resultType="com.core.model.demo.UserDomain">
+		SELECT
+		user_id as userId,user_name as userName,password,phone
+		FROM
+		t_user
+	</select>
+	
+	
+<insert id="add" parameterType="java.util.HashMap">
+
+insert into
+ t_user 
+ (user_id,user_name,password,phone)value(#{user_id},#{user_name},#{password},#{phone})
+
+</insert>
+
+
+<insert id="add1" parameterType="java.util.HashMap">
+
+insert into
+ t_user 
+ (user_id,user_name,password,phone)value(#{user_id},#{user_name},#{password},#{phone})
+
+</insert>
+</mapper>
